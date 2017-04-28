@@ -23,7 +23,45 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.7.2",
+
+    "@surf/core": "1.1.265",
+    "@surf/surf-theme-utils": "1.0.18",
+
+
+    "@surf/surf-alert": "1.0.8",
+    "@surf/surf-expand": "1.0.12",
+    "@surf/surf-gallery": "1.0.10",
+    "@surf/surf-gmap": "1.0.6",
+    "@surf/surf-grid": "1.0.39",
+    "@surf/surf-modal": "1.0.14",
+    "@surf/surf-pop-over": "v1.0.5",
+    "@surf/surf-loader": "1.0.12",
+    "@surf/surf-slider": "1.0.10",
+    "@surf/surf-star-rating":"1.0.3",
+    "@surf/surf-tab": "1.0.14",
+    "@surf/surf-button": "1.0.9",
+    "@surf/surf-input": "1.0.21",
+    "@surf/surf-multi-selector": "1.0.28",
+    "@surf/surf-carousel": "1.0.4",
+    "@surf/surf-message": "1.0.10",
+    "@surf/surf-card": "1.0.12",
+    "@surf/surf-chip": "1.0.17",
+    "@surf/surf-radiobutton": "1.0.13",
+    "@surf/surf-checkbox": "1.0.10",
+    "@surf/surf-toggle": "1.0.10",
+    "@surf/surf-pagination": "1.0.7",
+    "@surf/surf-drop-down": "1.0.14",
+
+    "@surf/surf-hotel-suggestion-card":"1.0.15",
+    "@surf-widgets/surf-hotel-summary-card":"1.0.40",
+    "@surf-widgets/surf-hotel-summary-card-2":"1.0.42",
+    "@surf-widgets/surf-hotel-alternatives":"1.0.28",
+    "@surf-widgets/surf-hotel-alternatives-filter":"1.0.7",
+    "@surf-widgets/surf-hotel-meal-plan-selection": "1.0.5",
+    "@surf-widgets/surf-hotel-room-selection": "1.0.7",
+    "@surf-widgets/surf-flight-summary-card-2": "1.0.41"
+
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",

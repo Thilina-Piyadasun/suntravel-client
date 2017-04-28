@@ -1,0 +1,164 @@
+<h2>{{SearchContractHedding}}</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="ui form">
+
+
+  <div class="form-group">
+    <!--<label for="cityInput">City</label>-->
+    <surf-input
+      [label]="'cityID'"
+      [placeholder]="'Enter city id'"
+      [id]="'cityId'"
+      [disabled]="false"
+      [required]="true"
+      [regEx]="'^[0-9]+$'"
+
+       [(ngModel)]="searchData.id"
+      name="city">
+
+    </surf-input>
+
+  </div>
+
+  <div>
+    <label>Check In Date</label>
+    <surf-input
+      [label]="'Check In Date'"
+      [placeholder]="'Check In Date'"
+      [id]="'checkInId'"
+      [disabled]="false"
+      [required]="true"
+      [regEx]="'^[0-9]+$'"
+      [(ngModel)]="searchData.checkIN"
+      name="checkIn">
+
+    </surf-input>
+  </div>
+
+
+    <div>
+      <label>Check Out Date</label>
+      <surf-input
+        [label]="'Check Out Date'"
+        [placeholder]="'Check Out Date'"
+        [id]="'checkoutId'"
+        [disabled]="false"
+        [required]="true"
+        [regEx]="'^[0-9]+$'"
+        [(ngModel)]="searchData.checkOut"
+        name="checkout">
+
+      </surf-input>
+    </div>
+
+  <div class="form-group">
+    <label>No of Adults</label>
+    <surf-input
+      [label]="'No of Adults'"
+      [placeholder]="'No of Adults'"
+      [id]="'totalAdults'"
+      [disabled]="false"
+      [required]="true"
+      [regEx]="'^[0-9]+$'"
+      [(ngModel)]="searchData.totaladults"
+      name="adults"
+      requied>
+
+    </surf-input>
+  </div>
+
+  <div id="adults request form" *ngIf="moreadults">
+
+    <form #g="ngForm" class="ui form" >
+
+      <table>
+        <tr>
+          <th>Roooms</th>
+          <th>Adults</th>
+        </tr>
+        <tr>
+          <td>
+            <surf-ul-drop-down
+
+              [items]="[{'id':'1', 'value':'1'}, {'id':'2', 'value':'2'}, {'id':'3', 'value':'3'}, {'id':'4', 'value':'4'},{'id':'5', 'value':'5'}, {'id':'6', 'value':'6'}, {'id':'7', 'value':'7'}]"
+              [listStyle]="'styled'"
+              [labelStyle]="'label'"
+              [icon]="'fa fa-cloud'"
+              [select]=true
+              [listStyle]="'container'"
+              [firstDisplay] = "'Hotel Rating' "
+              (singleObject)="setroom($event)"
+
+              name="rating"> >
+            </surf-ul-drop-down>
+          </td>
+          <td>
+            <surf-ul-drop-down
+
+              [items]="[{'id':'1', 'value':'1'}, {'id':'2', 'value':'2'}, {'id':'3', 'value':'3'}, {'id':'4', 'value':'4'},{'id':'5', 'value':'5'}, {'id':'6', 'value':'6'}, {'id':'7', 'value':'7'}]"
+              [listStyle]="'styled'"
+              [labelStyle]="'label'"
+              [icon]="'fa fa-cloud'"
+              [select]=true
+              [listStyle]="'container'"
+              [firstDisplay] = "'Hotel Rating' "
+              (singleObject)="setAdults($event)"
+
+              name="rating"> >
+            </surf-ul-drop-down>
+          </td>
+
+          <td>
+            <surf-button [btnType]="'btn1'"
+                         (click)="addRoomDetail()"
+                         [disabled]="flase" *ngIf="hasChanged">Add Room Detail
+            </surf-button>
+
+          </td>
+        </tr>
+      </table>
+
+    </form>
+  </div>
+
+  <div *ngIf="adultCount > 0">
+    <surf-grid content-columns>
+      <surf-grid-item row [colspan]="12" >
+        <surf-grid-item [colspan]="1" style="background: #fffabc">No of Rooms</surf-grid-item>
+        <surf-grid-item [colspan]="4" style="background: #BEE2F9">Adults</surf-grid-item>
+      </surf-grid-item>
+      <surf-grid-item row [colspan]="12" *ngFor="let row of searchData.roomRequestDetails">
+        <surf-grid-item [colspan]="1" style="background: #fffabc">{{row[0]}}</surf-grid-item>
+        <surf-grid-item [colspan]="4" style="background: #BEE2F9">{{row[1]}}</surf-grid-item>
+      </surf-grid-item>
+    </surf-grid>
+  </div>
+
+  <!--<surf-button [btnType]="'submit'"
+               [disabled]="true">Submit
+  </surf-button>-->
+    <button type="submit" class="ui button">Submit</button>
+</form>
+
+
+
+  <div *ngFor="let item of items">
+
+    <surf-grid-item row [colspan]="12">
+      <surf-grid-item [colspan]="3" style="background: #fffabc">{{item.hotelName | lowercase}}</surf-grid-item>
+      <surf-grid-item [colspan]="5" style="background: #BEE2F9">{{item.roomType}}</surf-grid-item>
+      <surf-grid-item [colspan]="4" style="background: #f6f6f6">{{item.price}}</surf-grid-item>
+      <surf-grid-item [colspan]="4" style="background: #f6f6f6">{{1506969000000|date}}</surf-grid-item>
+    </surf-grid-item>
+  </div>
+
+
+
+  <surf-grid>
+    <surf-grid-item card row [colspan]="12" *ngFor="let item of items" name="roomContracts">
+      <surf-grid-item [colspan]="3" style="background: #eee">{{item.hotelName}}</surf-grid-item>
+      <surf-grid-item [colspan]="5" style="background: #f6f6f6">{{item.roomType}}</surf-grid-item>
+      <surf-grid-item [colspan]="4" style="background: #eee">{{item.price}}</surf-grid-item>
+    </surf-grid-item>
+  </surf-grid>
+

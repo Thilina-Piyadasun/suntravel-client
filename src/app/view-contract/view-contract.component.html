@@ -1,0 +1,36 @@
+<h1>{{ViewContractHeader}}</h1>
+
+<surf-grid>
+
+  <surf-grid-item  card row [colspan]="12"  name="hedding">
+
+    <surf-grid-item  [colspan]="1" style="background: #f6f6f6">
+      <div class="ui red horizontal label">Contract ID</div>
+    </surf-grid-item>
+    <surf-grid-item [colspan]="2" style="background: #eee">
+      <div class="ui purple  horizontal label">Hotel Name</div></surf-grid-item>
+    <surf-grid-item [colspan]="1" style="background: #eee">
+      <div class="ui teal   horizontal label">markup</div>
+    </surf-grid-item>
+    <surf-grid-item [colspan]="3" style="background: #eee">
+      <div class="ui orange   horizontal label">validFrom</div>
+    </surf-grid-item>
+    <surf-grid-item [colspan]="3" style="background: #eee">
+      <div class="ui blue   horizontal label">validTo</div>
+    </surf-grid-item>
+    <surf-grid-item [colspan]="2" style="background: #eee">
+      <div class="ui yellow  horizontal label">Hotel Rating</div>
+    </surf-grid-item>
+  </surf-grid-item>
+  <surf-grid-item  card row [colspan]="12" *ngFor="let item of mydata2" name="roomContracts">
+    <surf-grid-item  [colspan]="1" style="background: #f6f6f6"><div (click)=clickFunction(item)>{{item.contractID}}</div></surf-grid-item>
+    <surf-grid-item [colspan]="2" style="background: #eee"><div (click)=clickFunction(item)>{{item.HotelName}}</div></surf-grid-item>
+    <surf-grid-item [colspan]="1" style="background: #eee"><div (click)=clickFunction(item)>{{item.markup}}</div></surf-grid-item>
+    <surf-grid-item [colspan]="3" style="background: #eee"><div (click)=clickFunction(item)>{{item.validFrom}}</div></surf-grid-item>
+    <surf-grid-item [colspan]="3" style="background: #eee"><div (click)=clickFunction(item)>{{item.validTo}}</div></surf-grid-item>
+    <surf-grid-item [colspan]="2" style="background: #eee"><div (click)=clickFunction(item)>{{item.hotelrating}}</div></surf-grid-item>
+  </surf-grid-item>
+</surf-grid>
+
+
+

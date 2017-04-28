@@ -1,0 +1,47 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="ui form">
+
+
+  <div class="form-group">
+    <label for="cityInput">City</label>
+    <input type="text"
+           class="form-control"
+           id="cityInput"
+           placeholder="city"
+           [(ngModel)]="searchData.id"
+           name="city"
+           required>
+  </div>
+
+
+  <div ngModelGroup="daterange">
+    <div class="form-group">
+      <label for="vFromInput">ValidFrom</label>
+      <input type="text"
+             class="form-control"
+             id="vFromInput"
+             placeholder="vfrom"
+             name="vfrom"
+             [(ngModel)]="searchData.checkIN"
+             required>
+    </div>
+
+    <div>
+      <label for="vtoInput">ValidFrom</label>
+      <input type="text"
+             class="form-control"
+             id="vtoInput"
+             placeholder="vto"
+             [(ngModel)]="searchData.checkOut"
+             name="vto">
+    </div>
+
+
+  <button type="submit" class="ui button">Submit</button>
+
+
+
+<ul>
+  <li *ngFor="let item of items">{{item.hotelName}}</li>
+</ul>
+  </div>
+</form>
