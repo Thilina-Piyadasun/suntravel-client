@@ -24,6 +24,7 @@ import {SurfHotelRoomSelectionModule} from '@surf-widgets/surf-hotel-room-select
 import {SurfHotelMealPlanSelectionModule} from '@surf-widgets/surf-hotel-meal-plan-selection';
 import {SurfButtonModule} from '@surf/surf-button';
 import {SurfStarRatingModule} from '@surf/surf-star-rating';
+import {routing} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {SurfStarRatingModule} from '@surf/surf-star-rating';
     SurfDropDownModule,
     SurfInputModule,
     SurfButtonModule,
-    SurfStarRatingModule
+    SurfStarRatingModule,
+    routing
 
   ],
   providers: [SURF_PROVIDERS, SurfLiteHolidayUtilService],

@@ -14,9 +14,17 @@
 <!--<div>
   <app-surf-search-hotel></app-surf-search-hotel>
 </div>-->
+<h1>Sun Travels</h1>
 
 <div>
-  <app-view-contract></app-view-contract>
+  <hr>
+    <a [routerLink]="['']">Home</a>
+    <a [routerLink]="['add']"> Add Contracts</a>
+    <a [routerLink]="['view']">View Contracts</a>
+  <hr>
+</div>
+<div>
+  <router-outlet></router-outlet>
 </div>
 
 
